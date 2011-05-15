@@ -1,0 +1,17 @@
+weicaozuo: weicaozuo.o d2b.o encryption.o exchange.o muiti.o
+	gcc weicaozuo.o d2b.o encryption.o exchange.o muiti.o -o weicaozuo
+weicaozuo.o:weicaozuo.c    muiti.h encryption.h exchange.h d2b.h
+	gcc -c weicaozuo.c
+d2b.o:d2b.c 
+	gcc -c d2b.c
+muiti.o:muiti.c 
+	gcc -c muiti.c
+encryption.o:encryption.c 
+	gcc -c encryption.c
+exchange.o:exchange.c  
+	gcc -c exchange.c
+clean:
+	@echo "cleanning project"
+	-rm weicaozuo *.o
+	@echo "cleanning completed"
+.PHONY:clean
